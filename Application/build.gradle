@@ -67,7 +67,8 @@ def initKeyStore() {
 }
 
 def String getKeyStorePath() {
-    return System.getenv('KEYSTORE_PATH')
+    String result = System.getenv('KEYSTORE_PATH')
+    return result == null ? "" : result
 }
 def File getStoreFile() {
     File file = new File(getKeyStorePath().concat('android-keystore.jks'))
