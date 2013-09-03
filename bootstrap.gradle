@@ -15,6 +15,7 @@ task unzipTemplate(type: Copy, dependsOn: downloadTemplate) {
 	from zipTree(file(templateFilename))
 	into file(templateOutputDir)
 	includeEmptyDirs false
+	exclude '**/bootstrap.gradle'
 	eachFile { it.path = it.relativePath.segments[1..-1].join('/') }
 }
 
