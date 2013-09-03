@@ -1,6 +1,6 @@
 def templateUrl = 'https://github.com/balesz/android-template-Application/archive/master.zip'
 def templateFilename = 'template.zip'
-def templateOutputDir = 'template'
+def templateOutputDir = '.'
 
 def projectName = 'TestProject'
 def packageName = 'net.solutinno.testproject'
