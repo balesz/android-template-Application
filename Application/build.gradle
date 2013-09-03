@@ -46,4 +46,5 @@ android {
     }
 }
 
-initKeyStore(android)
+apply from: 'signing.gradle'
+initSigning(android, android.defaultConfig.packageName)

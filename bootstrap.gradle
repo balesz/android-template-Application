@@ -20,7 +20,7 @@ task unzipTemplate(type: Copy, dependsOn: downloadTemplate) {
 
 task renameDirectories(dependsOn: unzipTemplate) << {
 	delete(templateFilename)
-	file("$templateOutputDir+/Application").renameTo("$templateOutputDir/$projectName")
+	file("$templateOutputDir/Application").renameTo("$templateOutputDir/$projectName")
 	if (templateOutputDir != '.') {
 		file(templateOutputDir).renameTo("android-$projectName")
 		templateOutputDir = "android-$projectName"
