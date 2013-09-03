@@ -1,12 +1,13 @@
-def templateUrl = 'https://github.com/balesz/android-template-Application/archive/master.zip'
-def templateFilename = 'template.zip'
-def templateOutputDir = '.'
-
 def projectName = 'TestProject'
 def packageName = 'net.solutinno.testproject'
 
+def templateUrl = 'https://github.com/balesz/android-template-Application/archive/master.zip'
+
+def templateFilename = 'template.zip'
+def templateOutputDir = '.'
+
 task downloadTemplate << {
-	def f = new File(templateFilename)
+  def f = new File(templateFilename)
 	if (f.exists()) f.delete();
 	new URL(templateUrl).withInputStream{ i -> f.withOutputStream { it << i } }
 }
