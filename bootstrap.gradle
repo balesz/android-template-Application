@@ -48,6 +48,18 @@ changeFiles << { // Create strings.xml file
 	f.text = f.text.replaceFirst("Application") { "$projectName" }
 }
 
+changeFiles << { // Create MainActivity.java
+	def f = file("$templateOutputDir/$projectName/src/main/MainActivity.java")
+	f.text = f.text.replaceFirst("package .*") { "package $packageName;" }
+	def path = packageName.replaceAll(/\./, "/")
+	mkdir("$templateOutputDir/$projectName/src/main/java/$path")
+	copy {
+		from f
+		into "$templateOutputDir/$projectName/src/main/java/$path"
+	}
+	delete(f)
+}
+
 task create(dependsOn: changeFiles) << {
 
 }
