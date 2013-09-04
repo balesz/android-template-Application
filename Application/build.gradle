@@ -14,8 +14,14 @@ repositories {
 }
 
 dependencies {
+    // Google Play Services
+    compile 'com.google.android.gms:play-services:3.2.25' 
+    // Support Libraries
     compile 'com.android.support:support-v4:18.0.+'
     compile 'com.android.support:appcompat-v7:18.0.+'
+    compile 'com.android.support:gridlayout-v7:18.0.+'
+    compile 'com.android.support:support-v13:18.0.+'
+    // Google Guava Libraries
     compile 'com.google.guava:guava:14.0.+'
 }
 
